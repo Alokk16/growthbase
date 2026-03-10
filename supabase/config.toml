@@ -1,0 +1,4 @@
+project_id = "wsdifxoltxlnizsbtsbx"
+
+[functions.analyze-excel]
+verify_jwt = false
