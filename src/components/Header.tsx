@@ -14,7 +14,11 @@ const Header = ({ onOpenChat }: HeaderProps) => {
         <div className="flex items-center justify-between h-full">
           <div className="flex items-center space-x-2 md:space-x-4">
             <div className="flex items-center space-x-2 md:space-x-3">
-              <span className="text-xl md:text-2xl font-black text-primary tracking-tight">mcw</span>
+              <img
+                src="/favicon.ico"
+                alt="GrowthBase logo"
+                className="h-10 w-10 rounded-md object-contain md:h-12 md:w-12"
+              />
               <div>
                 <h1 className="text-lg md:text-2xl font-bold gradient-text">GrowthBase</h1>
                 <p className="hidden sm:block text-xs md:text-sm text-muted-foreground">Smarter Tools. Sharper Calm.</p>
