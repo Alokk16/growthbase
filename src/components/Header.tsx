@@ -32,7 +32,7 @@ const Header = ({ onOpenChat }: HeaderProps) => {
             </Badge>
             <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary" onClick={() => onOpenChat?.({ type: "general", message: "How can I help you today?" })}>
               <MessageCircle className="h-4 w-4 mr-1 md:mr-2" />
-              <span className="hidden sm:inline">Ask Alok</span>
+              <span className="hidden sm:inline">Ask SwiftCFO</span>
             </Button>
           </div>
         </div>

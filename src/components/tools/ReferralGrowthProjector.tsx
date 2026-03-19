@@ -83,7 +83,7 @@ const ReferralGrowthProjector = ({ onOpenChat }: ReferralGrowthProjectorProps) =
         </div>
         <Button onClick={handleAskAlok} className="bg-primary hover:bg-primary/90">
           <MessageCircle className="h-4 w-4 mr-2" />
-          Ask Alok
+          Ask SwiftCFO
         </Button>
       </div>
 

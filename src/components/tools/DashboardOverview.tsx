@@ -33,7 +33,7 @@ const DashboardOverview = ({ onOpenChat }: DashboardOverviewProps) => {
     },
     {
       title: "AI Assistant",
-      value: "Alok",
+      value: "SwiftCFO",
       subtitle: "Your business advisor",
       icon: MessageCircle,
       color: "text-purple-500"
@@ -62,7 +62,7 @@ const DashboardOverview = ({ onOpenChat }: DashboardOverviewProps) => {
           className="bg-primary hover:bg-primary/90"
         >
           <MessageCircle className="h-4 w-4 mr-2" />
-          Ask Alok for Guidance
+          Ask SwiftCFO for Guidance
         </Button>
       </div>
 

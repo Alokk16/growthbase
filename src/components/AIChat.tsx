@@ -376,7 +376,7 @@ const AIChat = ({ isOpen, onClose, context }: AIChatProps) => {
         <DialogHeader>
           <DialogTitle className="text-xl font-bold gradient-text flex items-center">
             <Bot className="mr-2 h-6 w-6 text-primary" />
-            Alok - Your AI Business Strategist
+            SwiftCFO - Your AI Business Strategist
           </DialogTitle>
         </DialogHeader>
 
@@ -387,7 +387,7 @@ const AIChat = ({ isOpen, onClose, context }: AIChatProps) => {
                 <Bot className="h-12 w-12 mx-auto mb-3 text-primary" />
                 <p className="text-muted-foreground mb-3">
                   {context?.message ||
-                    "Hi! I'm Alok, your AI business strategist. Upload your Excel data and ask me to analyze it with any tool!"}
+                    "Hi! I'm SwiftCFO, your AI business strategist. Upload your Excel data and ask me to analyze it with any tool!"}
                 </p>
                 <div className="text-xs text-muted-foreground/70 space-y-1">
                   <p>📊 Upload .xlsx files → Ask questions → Get step-by-step calculations</p>
