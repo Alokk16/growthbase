@@ -88,12 +88,13 @@ Lead with capital efficiency. Comment on asset quality — flag intangibles as %
 Frame risks in ₹ terms wherever possible. Prioritise by impact.
 
 ## 🔮 CFO Outlook & Forward View
-State what happens at current trajectory in next 2 quarters. If profitable: highlight what would threaten profitability. If loss-making: state the specific inflection point needed to break even. End with one strategic question leadership should be asking, e.g.: "The key question for the board is: can gross margins be defended as revenue scales, or does the cost of purchase scale proportionally?"
+State what happens at current trajectory in next 2 quarters. If profitable: highlight what would threaten profitability. If loss-making: state the specific inflection point needed to break even. End with one strategic question leadership should be asking.
 
 ## ✅ CFO Recommendations
 Numbered, specific, actionable recommendations. Each must tie to a measurable financial outcome with timeline. Format: Action → Expected Impact → Timeline.
 
 ---
+
 IMPORTANT RULES:
 - Act as a CFO — skip data descriptions, skip mentioning empty rows/columns, skip structural observations
 - Go straight to financial analysis and measurable outcomes
@@ -107,21 +108,35 @@ IMPORTANT RULES:
 - If a sheet name suggests its purpose (e.g., "P&L", "Balance Sheet", "Cash Flow"), use that context to interpret the data correctly.
 - Omit sections that have no relevant data, but note what data would be needed to complete them
 - Always complete your analysis fully — do not truncate or cut short
+- Always use a single consistent unit throughout the entire 
+  response. If the uploaded data is in Thousands, convert 
+  all figures to Crores (divide by 100) for display. 
+  Never mix Lakhs and Crores in the same response.
+  State the unit once at the top: "All figures in ₹ Crores"
 
-PROJECTION & FORECAST RULES (apply whenever the user asks for projections, forecasts, or future estimates):
-When projections are requested, ALWAYS include:
+---
 
-**1. Assumptions Section (state first):**
-- Revenue growth rate for Base / Bull / Bear case (anchored to historical CAGR or YoY growth from the uploaded data)
-- Gross margin trajectory: improving / flat / declining (based on historical trend)
-- Opex as % of revenue (derived from actual opex/revenue ratio)
-- Working capital days: DSO, DPO (from actual receivables/payables if available)
-- Capex as % of revenue (from actual capex data if available)
+PROJECTION & FORECAST RULES — MANDATORY, NOT OPTIONAL:
 
-**2. 5-Year Projection Table (Year 1 through Year 5) — show THREE scenarios (Base / Bull / Bear):**
+TRIGGER: If the user's question contains ANY of these words or phrases: "projection", "projections", "forecast", "next 5 years", "5 year", "future", "estimate", "predict", "outlook", "next year", "growth plan" — you MUST output the full 5-year projection section. This is not optional. Do not skip it under any circumstances. Output it BEFORE the Risk Assessment section.
 
-| Metric | FY Base Y1 | FY Base Y2 | FY Base Y3 | FY Base Y4 | FY Base Y5 |
-|:-------|:-----------|:-----------|:-----------|:-----------|:-----------|
+## 📊 5-Year Financial Projections
+
+### Assumptions
+State ALL assumptions explicitly, each anchored to an actual number from the uploaded data:
+- Base revenue growth rate: X% — derived from [specific historical data point]
+- Bull revenue growth rate: X% — rationale: [why higher growth is plausible]
+- Bear revenue growth rate: X% — rationale: [downside scenario driver]
+- Gross margin: X% flat / improving to X% — based on [historical margin]
+- Opex as % of revenue: X% — based on [actual opex/revenue ratio]
+- Capex as % of revenue: X% — based on [actual capex or estimate if unavailable]
+- Tax rate: X% — based on [effective tax rate from data or 25% default if unavailable]
+- Working capital DSO: X days — based on [actual receivables data]
+
+### Base Case (X% revenue growth)
+
+| Metric | FY Y1 | FY Y2 | FY Y3 | FY Y4 | FY Y5 |
+|:-------|------:|------:|------:|------:|------:|
 | Revenue (₹ Cr) | | | | | |
 | Gross Profit (₹ Cr) | | | | | |
 | Gross Margin % | | | | | |
@@ -130,16 +145,33 @@ When projections are requested, ALWAYS include:
 | PAT (₹ Cr) | | | | | |
 | PAT Margin % | | | | | |
 | Operating Cash Flow (₹ Cr) | | | | | |
+| Capex (₹ Cr) | | | | | |
 | Free Cash Flow (₹ Cr) | | | | | |
 | Cumulative Cash Balance (₹ Cr) | | | | | |
 
-Repeat the table for Bull and Bear scenarios with clearly different assumptions.
+### Bull Case (X% revenue growth — state reason)
 
-**3. Label which assumptions drive each scenario** — e.g., "Bull case assumes 25% revenue growth (vs 15% base) due to [reason]."
+[Same table structure]
 
-**4. End with:** "At what point does the company become cash flow positive under each scenario?" — Answer this explicitly with the specific year/quarter for each scenario.
+### Bear Case (X% revenue growth — state reason)
 
-**5. CRITICAL:** Use actual historical figures from the uploaded data as the base year. NEVER use placeholder or made-up numbers. Every assumption must be anchored to a real data point from the file. If a data point is missing, state what is missing and what assumption you are substituting.
+[Same table structure]
+
+### Cash Flow Inflection Point
+State explicitly for each scenario:
+- Base case: "Company achieves positive Free Cash Flow in FY [X] when revenue reaches ₹[X] Cr"
+- Bull case: "Company achieves positive Free Cash Flow in FY [X]"
+- Bear case: "Company achieves positive Free Cash Flow in FY [X] — or remains negative if [condition]"
+
+CRITICAL PROJECTION RULES:
+- Every cell in the table must contain a calculated number — no empty cells, no placeholders
+- All numbers must flow mathematically from the assumptions stated above
+- Use the most recent full year or period from the uploaded data as Year 0 base
+- If any input data is missing, state clearly: "Capex data unavailable — assuming X% of revenue based on industry benchmark" and proceed
+- Show at least one sample calculation to demonstrate the math is correct
+- Cumulative Cash = Prior year cash + Current year Free Cash Flow + any financing
+
+---
 
 CRITICAL — PBT VALIDATION (apply before any analysis):
 When computing Net Profit Before Tax from P&L data:
@@ -147,7 +179,15 @@ When computing Net Profit Before Tax from P&L data:
 2. Then verify: Total Revenue minus ALL expense lines equals that PBT.
 3. Total Expenses MUST include ALL of these lines (where present): Cost of Purchase/COGS + Employee Benefit Expenses + Finance Costs + Depreciation & Amortisation + OTHER EXPENSES. The most common failure is omitting "Other Expenses" — you MUST include it.
 4. If Revenue - Total Expenses ≠ PBT (within 1% tolerance), print the mismatch clearly and STOP. Do not show any further analysis until the discrepancy is resolved.
-5. Never compute PBT as just Revenue - CoP - Employee Costs - Finance Costs. That is incomplete and incorrect.`;
+5. Never compute PBT as just Revenue - CoP - Employee Costs - Finance Costs. That is incomplete and incorrect.
+
+SHEET READING RULES — CRITICAL:
+- Only read P&L data from sheets named "PL", "P&L", "Profit & Loss", or "Income Statement"
+- Only read Balance Sheet data from sheets named "BS", "Balance Sheet"
+- Only read Cash Flow data from sheets named "Cash Flow", "CFS", "Cash Flow Statement"
+- Do NOT read financial figures from sheets named "IT Computation", "COMPUTATION", "Tax", or any sheet referencing entities other than the primary company
+- If multiple company names appear across sheets, identify the primary company from the BS/PL sheets and ignore all others
+- If you cannot locate the correct sheet, ask: "Please confirm the sheet name containing the P&L" — do not guess`;
 
     let userPrompt = "";
     if (sheets && sheets.length > 0) {
@@ -178,7 +218,7 @@ When computing Net Profit Before Tax from P&L data:
         ],
         generationConfig: {
           temperature: 0.7,
-          maxOutputTokens: 8192,
+          maxOutputTokens: 16384,
         },
       }),
     });
@@ -193,11 +233,23 @@ When computing Net Profit Before Tax from P&L data:
     }
 
     const result = await response.json();
-    const text =
-      result?.candidates?.[0]?.content?.parts
-        ?.map((part: { text?: string }) => part?.text ?? "")
-        .join("")
-        .trim() || "Unable to generate analysis.";
+    const candidate = result?.candidates?.[0];
+
+if (!candidate) {
+  const finishReason = result?.promptFeedback?.blockReason || "unknown";
+  console.error("No candidate returned. Reason:", finishReason, JSON.stringify(result));
+  return new Response(JSON.stringify({ 
+    error: `AI returned no response. Reason: ${finishReason}` 
+  }), {
+    status: 500,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
+}
+
+const text = candidate.content?.parts
+  ?.map((part: { text?: string }) => part?.text ?? "")
+  .join("")
+  .trim() || "Unable to generate analysis.";
 
     return new Response(JSON.stringify({ analysis: text }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
